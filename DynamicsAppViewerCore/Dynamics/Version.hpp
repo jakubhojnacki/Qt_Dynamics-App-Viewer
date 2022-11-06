@@ -1,6 +1,8 @@
 #pragma once
 
-namespace DynamicsAppViewerCore {
+#include <QString>
+
+namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Dynamics {
     class Version {
         public: Version();
         public: Version(int pMajor, int pMinor);
@@ -18,5 +20,10 @@ namespace DynamicsAppViewerCore {
 
         private: int revision { 0 };
         public: int getRevision() const;
+
+        public: static Version empty();
+        public: bool isEmpty() const;
+        public: QString format() const;
+        public: static Version parse(QString& pText);
     };
-}
+} } } }

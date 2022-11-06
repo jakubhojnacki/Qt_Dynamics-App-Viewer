@@ -1,6 +1,10 @@
 #include "Library.hpp"
 
-namespace DynamicsAppViewerCore {
-    Library::Library() {
+namespace Fortah {
+    namespace DynamicsAppViewer {
+        namespace Core {
+            Library::Library() {
+            }
+        }
     }
 }

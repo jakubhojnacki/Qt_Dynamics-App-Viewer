@@ -10,15 +10,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    DynamicsApplication.cpp \
-    Library.cpp \
-    Version.cpp
+    Dynamics/Application.cpp \
+    Dynamics/ApplicationBase.cpp \
+    Dynamics/Dependency.cpp \
+    Dynamics/IdRange.cpp \
+    Dynamics/Runtime.cpp \
+    Dynamics/Version.cpp \
+    Library.cpp
 
 HEADERS += \
-    DynamicsApplication.hpp \
+    Dynamics/Application.hpp \
+    Dynamics/ApplicationBase.hpp \
+    Dynamics/Dependency.hpp \
+    Dynamics/IdRange.hpp \
+    Dynamics/Runtime.hpp \
+    Dynamics/Version.hpp \
     Global.hpp \
-    Library.hpp \
-    Version.hpp
+    Library.hpp
 
 # Default rules for deployment.
 unix {
