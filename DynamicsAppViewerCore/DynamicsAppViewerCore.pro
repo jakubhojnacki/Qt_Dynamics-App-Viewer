@@ -10,23 +10,25 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Adapters/AppReader.cpp \
-    Adapters/ApplicationXmlReader.cpp \
+    Adapters/ApplicationReader.cpp \
+    Adapters/ManifestXmlReader.cpp \
     Data/Application.cpp \
-    Data/ApplicationBase.cpp \
     Data/Dependency.cpp \
     Data/IdRange.cpp \
+    Data/Manifest.cpp \
+    Data/ManifestBase.cpp \
     Data/Runtime.cpp \
     Data/Version.cpp \
     Library.cpp
 
 HEADERS += \
-    Adapters/AppReader.hpp \
-    Adapters/ApplicationXmlReader.hpp \
+    Adapters/ApplicationReader.hpp \
+    Adapters/ManifestXmlReader.hpp \
     Data/Application.hpp \
-    Data/ApplicationBase.hpp \
     Data/Dependency.hpp \
     Data/IdRange.hpp \
+    Data/Manifest.hpp \
+    Data/ManifestBase.hpp \
     Data/Runtime.hpp \
     Data/Version.hpp \
     Global.hpp \

@@ -1,22 +1,17 @@
 #pragma once
 
-#include "Global.hpp"
+#include "../Global.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
     class DYNAMICS_APP_VIEWER_CORE_EXPORT IdRange {
-        public:
-            IdRange();
+        public: IdRange();
 
-        private:
-            int from { 0 };
-            int to { 0 };
+        private: int from { 0 };
+        public: int getFrom() const;
+        public: void setFrom(const int pFrom);
 
-        public:
-            int getFrom() const;
-            int getTo() const;
-
-        public:
-            void setFrom(const int pFrom);
-            void setTo(const int pTo);
+        private: int to { 0 };
+        public: int getTo() const;
+        public: void setTo(const int pTo);
     };
 } } } }

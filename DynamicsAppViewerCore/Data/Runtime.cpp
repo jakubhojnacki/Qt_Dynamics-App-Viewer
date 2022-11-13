@@ -12,8 +12,13 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         this->minor = pMinor;
     }
 
-    int Runtime::getMajor() const { return this->major; }
-    int Runtime::getMinor() const { return this->minor; }
+    int Runtime::getMajor() const {
+        return this->major;
+    }
+
+    int Runtime::getMinor() const {
+        return this->minor;
+    }
 
     Runtime Runtime::empty() {
         return Runtime();
