@@ -9,6 +9,6 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Adap
         public: ApplicationReader();
 
         public: Data::Application read(const QString& pFilePath);
-        public: Data::Application read(const QTextStream& pTextStream);
+        public: Data::Application read(const QDataStream& pStream);
     };
 } } } }
