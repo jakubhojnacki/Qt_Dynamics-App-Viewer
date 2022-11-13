@@ -1,6 +1,6 @@
 #include "Version.hpp"
 
-namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
+namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Generic {
     Version::Version() {
     }
 
@@ -17,13 +17,21 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         this->revision = pRevision;
     }
 
-    int Version::getMajor() const { return this->major; }
+    int Version::getMajor() const {
+        return this->major;
+    }
 
-    int Version::getMinor() const { return this->minor; }
+    int Version::getMinor() const {
+        return this->minor;
+    }
 
-    int Version::getBuild() const { return this->build; }
+    int Version::getBuild() const {
+        return this->build;
+    }
 
-    int Version::getRevision() const { return this->revision; }
+    int Version::getRevision() const {
+        return this->revision;
+    }
 
     QString Version::format() const {
         QString text { };

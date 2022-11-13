@@ -19,6 +19,7 @@ SOURCES += \
     Data/ManifestBase.cpp \
     Data/Runtime.cpp \
     Data/Version.cpp \
+    General/ApplicationInformation.cpp \
     Library.cpp
 
 HEADERS += \
@@ -31,6 +32,7 @@ HEADERS += \
     Data/ManifestBase.hpp \
     Data/Runtime.hpp \
     Data/Version.hpp \
+    General/ApplicationInformation.hpp \
     Global.hpp \
     Library.hpp
 

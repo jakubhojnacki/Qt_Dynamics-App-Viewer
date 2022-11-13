@@ -3,7 +3,7 @@
 #include <QString>
 #include "../Global.hpp"
 
-namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
+namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Generic {
     class DYNAMICS_APP_VIEWER_CORE_EXPORT Version {
         public: Version();
         public: Version(int pMajor, int pMinor);
