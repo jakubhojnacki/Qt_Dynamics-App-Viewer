@@ -10,7 +10,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
         private: QString name { "Dynamics App Viewer" };
         public: const QString& getName() const;
 
-        private: QString description { "Viewr for Dynamics 365 Bueinss Central application files" };
+        private: QString description { "Viewer for Dynamics 365 Business Central application files" };
         public: const QString& getDescription() const;
 
         private: QVersionNumber version { 0, 0, 1 };

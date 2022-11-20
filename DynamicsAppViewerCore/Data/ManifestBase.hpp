@@ -3,7 +3,7 @@
 #include <QString>
 #include <QUuid>
 #include "../Global.hpp"
-#include "../Generic/Version.hpp"
+#include "Version.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
     class DYNAMICS_APP_VIEWER_CORE_EXPORT ManifestBase {
@@ -21,8 +21,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         public: const QString& getPublisher() const;
         public: void setPublisher(const QString& pPublisher);
 
-        private: Generic::Version version { };
-        public: const Generic::Version& getVersion() const;
-        public: void setVersion(const Generic::Version& pVersion);
+        private: Version version { };
+        public: const Version& getVersion() const;
+        public: void setVersion(const Version& pVersion);
     };
 } } } }

@@ -1,6 +1,6 @@
 #include "Version.hpp"
 
-namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Generic {
+namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
     Version::Version() {
     }
 
