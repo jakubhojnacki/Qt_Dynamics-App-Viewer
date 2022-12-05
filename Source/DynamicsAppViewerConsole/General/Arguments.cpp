@@ -2,14 +2,14 @@
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
     Arguments::Arguments() {
-        this->commandLineParser.addPositionalArgument("path", "Path to application file");
     }
 
     const QString& Arguments::getPath() const { return this->path; }
+    void Arguments::setPath(const QString& pPath) { this->path = pPath; }
 
-    void Arguments::parse(const QCoreApplication& pQtApplication) {
-        this->commandLineParser.process(pQtApplication);
-        QStringList positionalArguments = commandLineParser.positionalArguments();
-        this->path = positionalArguments.at(0);
-    }
+    DetailLevel Arguments::getDetailLevel() const { return this->detailLevel; }
+    void Arguments::setDetailLevel(const DetailLevel pDetailLevel) { this->detailLevel = pDetailLevel; }
+
+    bool Arguments::getShowObjects() const { return this->showObjects; }
+    void Arguments::setShowObjects(const bool pShowObjects) { this->showObjects = pShowObjects; }
 } } } }

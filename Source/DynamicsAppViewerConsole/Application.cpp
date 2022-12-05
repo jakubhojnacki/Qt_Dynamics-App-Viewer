@@ -1,9 +1,9 @@
 #include <QCommandLineParser>
 #include <QTextStream>
 #include "Application.hpp"
-#include "../DynamicsAppViewerCore/General/ApplicationInformation.hpp"
 #include "Formatters/ApplicationInformationFormatter.hpp"
 #include "Formatters/ArgumentsFormatter.hpp"
+#include "General/ArgumentsParser.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console {
     Application::Application(QObject* pParent) : QObject(pParent) {
@@ -20,11 +20,12 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
     }
 
     void Application::initialise() {
-        Core::General::ApplicationInformation applicationInformation;
-        this->out << Formatters::ApplicationInformationFormatter::toString(applicationInformation) << "\r\n";
+        this->out << Formatters::ApplicationInformationFormatter::toString(this->applicationInformation) << "\r\n";
     }
 
     void Application::readArguments() {
+        General::ArgumentsParser parser { this->library.getApplicationInformation() };
+
         this->arguments.parse(*this->getQtApplication());
         this->out << Formatters::ArgumentsFormatter::toString(this->arguments) << "\r\n";
     }

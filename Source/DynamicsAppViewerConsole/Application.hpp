@@ -3,6 +3,8 @@
 #include <QCoreApplication>
 #include <QObject>
 #include <QTextStream>
+#include "../DynamicsAppViewerCore/Library.hpp"
+#include "../DynamicsAppViewerCore/General/ApplicationInformation.hpp"
 #include "General/Arguments.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console {
@@ -11,6 +13,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
 
         public: Application(QObject* pParent = 0);
 
+        private: Core::Library library { };
+        private: Core::General::ApplicationInformation applicationInformation { this->library.getApplicationInformation() };
         private: General::Arguments arguments { };
         private: QTextStream out { stdout };
 
