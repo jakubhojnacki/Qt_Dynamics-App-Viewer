@@ -20,6 +20,8 @@ SOURCES += \
     Data/Runtime.cpp \
     Data/Version.cpp \
     General/ApplicationInformation.cpp \
+    General/Bool.cpp \
+    General/Exception.cpp \
     Library.cpp
 
 HEADERS += \
@@ -33,6 +35,8 @@ HEADERS += \
     Data/Runtime.hpp \
     Data/Version.hpp \
     General/ApplicationInformation.hpp \
+    General/Bool.hpp \
+    General/Exception.hpp \
     Global.hpp \
     Library.hpp
 

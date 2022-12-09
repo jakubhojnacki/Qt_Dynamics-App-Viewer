@@ -3,7 +3,7 @@
 #include "Application.hpp"
 #include "Formatters/ApplicationInformationFormatter.hpp"
 #include "Formatters/ArgumentsFormatter.hpp"
-#include "General/ArgumentsParser.hpp"
+#include "General/ArgumentParser.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console {
     Application::Application(QObject* pParent) : QObject(pParent) {
@@ -24,9 +24,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
     }
 
     void Application::readArguments() {
-        General::ArgumentsParser parser { this->library.getApplicationInformation() };
-
-        this->arguments.parse(*this->getQtApplication());
+        General::ArgumentParser parser { this->library.getApplicationInformation() };
+        this->arguments = parser.parse(*this->getQtApplication());
         this->out << Formatters::ArgumentsFormatter::toString(this->arguments) << "\r\n";
     }
 

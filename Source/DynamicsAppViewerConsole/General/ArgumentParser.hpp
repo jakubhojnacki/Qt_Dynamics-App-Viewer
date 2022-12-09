@@ -6,8 +6,8 @@
 #include "../DynamicsAppViewerCore/General/ApplicationInformation.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    class ArgumentsParser {
-        public: ArgumentsParser(const Core::General::ApplicationInformation& pApplicationInformation);
+    class ArgumentParser {
+        public: ArgumentParser(const Core::General::ApplicationInformation& pApplicationInformation);
 
         private: Core::General::ApplicationInformation applicationInformation { };
         private: QCommandLineParser parser { };
@@ -17,7 +17,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
 
         public: Arguments parse(const QCoreApplication& pQtApplication);
 
-        private: QString getPositionalArgumentStringValue(const int pIndex) const;
+        private: QString getPositionalArgumentStringValue(const int pIndex, const QString& pName) const;
         private: DetailLevel getDetailLevelOptionValue(const QCommandLineOption& pOption) const;
         private: bool getBooleanOptionValue(const QCommandLineOption& pOption) const;
+    };
 } } } }

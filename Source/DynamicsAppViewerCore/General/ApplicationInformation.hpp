@@ -1,10 +1,15 @@
 #pragma once
 
+#include <QObject>
 #include <QString>
 #include <QVersionNumber>
 
+#include "Global.hpp"
+
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace General {
-    class ApplicationInformation {
+    class DYNAMICS_APP_VIEWER_CORE_EXPORT ApplicationInformation : public QObject {
+        Q_OBJECT
+
         public: ApplicationInformation();
 
         private: QString name { "Dynamics App Viewer" };

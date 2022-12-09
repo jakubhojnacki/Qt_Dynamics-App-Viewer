@@ -1,10 +1,14 @@
 #pragma once
 
+#include <QObject>
 #include <QString>
+
 #include "../Global.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class DYNAMICS_APP_VIEWER_CORE_EXPORT Runtime {
+    class DYNAMICS_APP_VIEWER_CORE_EXPORT Runtime : public QObject {
+        Q_OBJECT
+
         public: Runtime();
         public: Runtime(int pMajor);
         public: Runtime(int pMajor, int pMinor);

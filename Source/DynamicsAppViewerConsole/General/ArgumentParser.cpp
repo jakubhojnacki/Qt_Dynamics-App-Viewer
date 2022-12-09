@@ -1,8 +1,10 @@
-#include "ArgumentsParser.hpp"
+#include "ArgumentParser.hpp"
 #include "../Formatters/ApplicationInformationFormatter.hpp"
+#include "../../DynamicsAppViewerCore/General/Exception.hpp"
+#include "../../DynamicsAppViewerCore/General/Bool.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    ArgumentsParser::ArgumentsParser(const Core::General::ApplicationInformation& pApplicationInformation) : applicationInformation(pApplicationInformation) {
+    ArgumentParser::ArgumentParser(const Core::General::ApplicationInformation& pApplicationInformation) : applicationInformation(pApplicationInformation) {
         this->parser.setApplicationDescription(Formatters::ApplicationInformationFormatter::toString(this->applicationInformation));
         this->parser.addHelpOption();
         this->parser.addVersionOption();
@@ -11,42 +13,42 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         this->parser.addOption(this->showObjectsOption);
     }
 
-    Arguments ArgumentsParser::parse(const QCoreApplication& pQtApplication) {
+    Arguments ArgumentParser::parse(const QCoreApplication& pQtApplication) {
         Arguments arguments { };
 
         this->parser.process(pQtApplication);
         this->positionalArguments = this->parser.positionalArguments();
 
-        arguments.setPath(this->getPositionalArgumentStringValue(0));
+        arguments.setPath(this->getPositionalArgumentStringValue(0, "Path"));
         arguments.setDetailLevel(this->getDetailLevelOptionValue(this->detailLevelOption));
         arguments.setShowObjects(this->getBooleanOptionValue(this->showObjectsOption));
 
         return arguments;
     }
 
-    QString ArgumentsParser::getPositionalArgumentStringValue(const int pIndex) const {
+    QString ArgumentParser::getPositionalArgumentStringValue(const int pIndex, const QString& pName) const {
         QString value { "" };
         if (this->positionalArguments.length() > pIndex)
             value = this->positionalArguments.at(pIndex);
         else
-            throw ""; //TODO >>> Throw a proper exception here
+            throw Core::General::Exception { QString("Argument '%1' hasn't been provided").arg(pName) };
         return value;
     }
 
-    DetailLevel ArgumentsParser::getDetailLevelOptionValue(const QCommandLineOption& pOption) const {
+    DetailLevel ArgumentParser::getDetailLevelOptionValue(const QCommandLineOption& pOption) const {
         DetailLevel value { DetailLevel::Basic };
         if (this->parser.isSet(pOption)) {
             QString stringValue = this->parser.value(pOption);
-            //TODO >>> Parse to enum
+            value = DetailLevel::parse(stringValue);
         }
         return value;
     }
 
-    bool ArgumentsParser::getBooleanOptionValue(const QCommandLineOption& pOption) const {
+    bool ArgumentParser::getBooleanOptionValue(const QCommandLineOption& pOption) const {
         bool value = false;
         if (this->parser.isSet(pOption)) {
             QString stringValue = this->parser.value(pOption);
-            //TODO >>> Parse to boolean
+            value = Core::General::Bool::parse(stringValue);
         }
         return value;
     }

@@ -11,8 +11,9 @@ SOURCES += \
         Application.cpp \
         Formatters/ApplicationInformationFormatter.cpp \
         Formatters/ArgumentsFormatter.cpp \
+        General/ArgumentParser.cpp \
         General/Arguments.cpp \
-        General/ArgumentsParser.cpp \
+        General/DetailLevel.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -24,8 +25,8 @@ HEADERS += \
     Application.hpp \
     Formatters/ApplicationInformationFormatter.hpp \
     Formatters/ArgumentsFormatter.hpp \
+    General/ArgumentParser.hpp \
     General/Arguments.hpp \
-    General/ArgumentsParser.hpp \
     General/DetailLevel.hpp
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DynamicsAppViewerCore/release/ -lDynamicsAppViewerCore
