@@ -1,12 +1,19 @@
 #pragma once
 
+#include <QObject>
 #include <QTextStream>
+
 #include "../Data/Manifest.hpp"
 
-namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Adapters {
-    class ManifestXmlReader {
-        public: ManifestXmlReader();
+namespace Fortah {
+    namespace DynamicsAppViewer {
+        namespace Core {
+            namespace Adapters {
+            class ManifestXmlReader : QObject {
+                Q_OBJECT
 
-        public: Data::Manifest read(const QTextStream& pStream);
-    };
-} } } }
+                public: ManifestXmlReader();
+
+                public: Data::Manifest read(const QTextStream& pStream);
+            };
+        } } } }

@@ -1,22 +1,32 @@
 #pragma once
 
+#include <QObject>
 #include <QString>
+
 #include "DetailLevel.hpp"
 
-namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    class Arguments {
-        public: Arguments();
+namespace Fortah {
+    namespace DynamicsAppViewer {
+        namespace Console {
+            namespace General {
+                class Arguments : public QObject {
+                    Q_OBJECT
 
-        private: QString path { "" };
-        public: const QString& getPath() const;
-        public: void setPath(const QString& pPath);
+                    public: Arguments();
 
-        private: DetailLevel detailLevel { DetailLevel::Basic };
-        public: DetailLevel getDetailLevel() const;
-        public: void setDetailLevel(const DetailLevel pDetailLevel);
+                    private: QString path { "" };
+                    public: const QString& getPath() const;
+                    public: void setPath(const QString& pPath);
 
-        private: bool showObjects { false };
-        public: bool getShowObjects() const;
-        public: void setShowObjects(const bool pShowObjects);
-    };
-} } } }
+                    private: DetailLevel detailLevel { DetailLevel::Basic };
+                    public: DetailLevel getDetailLevel() const;
+                    public: void setDetailLevel(const DetailLevel pDetailLevel);
+
+                    private: bool showObjects { false };
+                    public: bool getShowObjects() const;
+                    public: void setShowObjects(const bool pShowObjects);
+                };
+            }
+        }
+    }
+}
