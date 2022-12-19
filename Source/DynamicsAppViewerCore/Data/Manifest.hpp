@@ -3,15 +3,15 @@
 #include <QList>
 #include <QString>
 #include <QUuid>
+
 #include "Dependency.hpp"
-#include "../Global.hpp"
 #include "IdRange.hpp"
 #include "ManifestBase.hpp"
 #include "Runtime.hpp"
 #include "Version.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class DYNAMICS_APP_VIEWER_CORE_EXPORT Manifest : public ManifestBase {
+    class Manifest : public ManifestBase {
         public: Manifest();
 
         private: QString brief { "" };

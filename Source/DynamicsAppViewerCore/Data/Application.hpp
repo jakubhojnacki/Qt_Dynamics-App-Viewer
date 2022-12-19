@@ -1,15 +1,11 @@
 #pragma once
 
-#include <QObject>
 #include <QString>
 
-#include "../Global.hpp"
 #include "../Data/Manifest.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class DYNAMICS_APP_VIEWER_CORE_EXPORT Application : public QObject {
-        Q_OBJECT
-
+    class Application {
         public: Application();
 
         private: QString filePath { };

@@ -1,13 +1,7 @@
 #pragma once
 
-#include <QObject>
-
-#include "../Global.hpp"
-
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class DYNAMICS_APP_VIEWER_CORE_EXPORT IdRange : public QObject {
-        Q_OBJECT
-
+    class IdRange {
         public: IdRange();
 
         private: int from { 0 };

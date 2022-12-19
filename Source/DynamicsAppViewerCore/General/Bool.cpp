@@ -1,9 +1,14 @@
 #include <QMap>
-#include "Exception.hpp"
+
 #include "Bool.hpp"
+#include "Exception.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace General {
     Bool::Bool() {
+    }
+
+    QString Bool::toString(const bool pValue) {
+        return pValue ? "True" : "False";
     }
 
     bool Bool::parse(const QString& pString) {

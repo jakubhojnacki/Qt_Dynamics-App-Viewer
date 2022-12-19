@@ -4,19 +4,11 @@
 
 #include "../DynamicsAppViewerCore/General/ApplicationInformation.hpp"
 
-namespace Fortah {
-    namespace DynamicsAppViewer {
-        namespace Console {
-            namespace Formatters {
-                class ApplicationInformationFormatter : public QObject {
-                    Q_OBJECT
+namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace Formatters {
+    class ApplicationInformationFormatter {
+        private: ApplicationInformationFormatter();
 
-                    private: ApplicationInformationFormatter();
-
-                    public: static QString toString(const Core::General::ApplicationInformation& pApplicationInformation);
-                };
-            }
-        }
-    }
-}
+        public: static QString toString(const Core::General::ApplicationInformation& pApplicationInformation);
+    };
+} } } }
 

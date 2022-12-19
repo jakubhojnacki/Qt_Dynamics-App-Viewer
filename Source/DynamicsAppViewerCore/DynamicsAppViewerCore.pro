@@ -21,6 +21,7 @@ SOURCES += \
     Data/Version.cpp \
     General/ApplicationInformation.cpp \
     General/Bool.cpp \
+    General/Enum.cpp \
     General/Exception.cpp \
     Library.cpp
 
@@ -36,6 +37,7 @@ HEADERS += \
     Data/Version.hpp \
     General/ApplicationInformation.hpp \
     General/Bool.hpp \
+    General/Enum.hpp \
     General/Exception.hpp \
     Global.hpp \
     Library.hpp

@@ -16,3 +16,4 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
     const Version& ManifestBase::getVersion() const { return this->version; }
     void ManifestBase::setVersion(const Version& pVersion) { this->version = pVersion; }
 } } } }
+

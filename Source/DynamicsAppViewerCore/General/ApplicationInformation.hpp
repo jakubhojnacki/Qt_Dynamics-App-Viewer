@@ -1,15 +1,12 @@
 #pragma once
 
-#include <QObject>
 #include <QString>
 #include <QVersionNumber>
 
 #include "Global.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace General {
-    class DYNAMICS_APP_VIEWER_CORE_EXPORT ApplicationInformation : public QObject {
-        Q_OBJECT
-
+    class DYNAMICS_APP_VIEWER_CORE_EXPORT ApplicationInformation {
         public: ApplicationInformation();
 
         private: QString name { "Dynamics App Viewer" };
@@ -27,7 +24,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
         private: QString author { "Jakub Hojnacki <jakubhojnacki@gmail.com>" };
         public: const QString& getAuthor() const;
 
-        private: QString date { "November 2022" };
+        private: QString date { "December 2022" };
         public: const QString& getDate() const;
     };
 } } } }
