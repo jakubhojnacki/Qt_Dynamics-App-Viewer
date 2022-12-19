@@ -814,7 +814,9 @@ Bool.o: ../../Source/DynamicsAppViewerCore/General/Bool.cpp ../../Source/Dynamic
 		../../Source/DynamicsAppViewerCore/General/Exception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Bool.o ../../Source/DynamicsAppViewerCore/General/Bool.cpp
 
-Enum.o: ../../Source/DynamicsAppViewerCore/General/Enum.cpp ../../Source/DynamicsAppViewerCore/General/Enum.hpp
+Enum.o: ../../Source/DynamicsAppViewerCore/General/Enum.cpp ../../Source/DynamicsAppViewerCore/General/Enum.hpp \
+		../../Source/DynamicsAppViewerCore/Global.hpp \
+		../../Source/DynamicsAppViewerCore/General/Exception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Enum.o ../../Source/DynamicsAppViewerCore/General/Enum.cpp
 
 Exception.o: ../../Source/DynamicsAppViewerCore/General/Exception.cpp ../../Source/DynamicsAppViewerCore/General/Exception.hpp \

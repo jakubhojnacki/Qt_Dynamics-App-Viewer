@@ -40,7 +40,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         DetailLevel value { DetailLevelEnum::Basic };
         if (this->parser.isSet(pOption)) {
             QString stringValue = this->parser.value(pOption);
-            value = DetailLevel::parse(stringValue);
+            value.parse(stringValue);
         }
         return value;
     }

@@ -737,17 +737,17 @@ ApplicationInformationFormatter.o: ../../Source/DynamicsAppViewerConsole/Formatt
 ArgumentsFormatter.o: ../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.cpp ../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
 		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
+		../../Source/DynamicsAppViewerCore/Global.hpp \
 		../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.hpp \
-		../../Source/DynamicsAppViewerCore/General/Bool.hpp \
-		../../Source/DynamicsAppViewerCore/Global.hpp
+		../../Source/DynamicsAppViewerCore/General/Bool.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ArgumentsFormatter.o ../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.cpp
 
 ArgumentParser.o: ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.cpp ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.hpp \
 		../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
 		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
-		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerCore/Global.hpp \
+		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerConsole/Formatters/ApplicationInformationFormatter.hpp \
 		../../Source/DynamicsAppViewerCore/General/Exception.hpp \
 		../../Source/DynamicsAppViewerCore/General/Bool.hpp
@@ -755,11 +755,13 @@ ArgumentParser.o: ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.c
 
 Arguments.o: ../../Source/DynamicsAppViewerConsole/General/Arguments.cpp ../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
-		../../Source/DynamicsAppViewerCore/General/Enum.hpp
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
+		../../Source/DynamicsAppViewerCore/Global.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Arguments.o ../../Source/DynamicsAppViewerConsole/General/Arguments.cpp
 
 DetailLevel.o: ../../Source/DynamicsAppViewerConsole/General/DetailLevel.cpp ../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
-		../../Source/DynamicsAppViewerCore/General/Enum.hpp
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
+		../../Source/DynamicsAppViewerCore/Global.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DetailLevel.o ../../Source/DynamicsAppViewerConsole/General/DetailLevel.cpp
 
 main.o: ../../Source/DynamicsAppViewerConsole/main.cpp ../../Source/DynamicsAppViewerConsole/Application.hpp \

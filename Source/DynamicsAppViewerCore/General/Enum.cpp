@@ -15,18 +15,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
 
     template <typename EnumType>
     Enum<EnumType>::Enum(const QString& pString) {
-        bool valueFound { false };
-        QString stringToFind = pString.trimmed().toLower();
-        QMap<EnumType, QString> values = this->getValues();
-        QList<QString> strings = values.values();
-        for (int index = 0; index  < strings.size(); ++index)
-            if (strings.at(index).trimmed().toLower() == stringToFind) {
-                this->value = values.keys[index];
-                valueFound = true;
-                break;
-            }
-        if (!valueFound)
-            throw Exception { QString { "Cannot parse '%1' to %2" }.arg(pString, this->getName()) };
+        this->parse(pString);
     }
 
     template <typename EnumType>
@@ -52,5 +41,21 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
         if (values.contains(this->value))
             string = values[this->value];
         return string;
+    }
+
+    template <typename EnumType>
+    void Enum<EnumType>::parse(const QString& pString) {
+        bool valueFound { false };
+        QString stringToFind = pString.trimmed().toLower();
+        QMap<EnumType, QString> values = this->getValues();
+        QList<QString> strings = values.values();
+        for (int index = 0; index  < strings.size(); ++index)
+            if (strings.at(index).trimmed().toLower() == stringToFind) {
+                this->value = values.keys[index];
+                valueFound = true;
+                break;
+            }
+        if (!valueFound)
+            throw Exception { QString { "Cannot parse '%1' to %2" }.arg(pString, this->getName()) };
     }
 } } } }

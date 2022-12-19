@@ -2,9 +2,11 @@
 
 #include <QString>
 
+#include "Global.hpp"
+
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace General {
     template <typename EnumType>
-    class Enum {
+    class DYNAMICS_APP_VIEWER_CORE_EXPORT Enum {
         public: Enum();
         public: Enum(const EnumType pValue);
         public: Enum(const QString& pString);
@@ -19,5 +21,6 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
         public: void setValue(const EnumType pValue);
 
         public: QString toString() const;
+        public: void parse(const QString& pString);
     };
 } } } }
