@@ -697,6 +697,7 @@ moc_Application.cpp: ../../Source/DynamicsAppViewerConsole/Application.hpp \
 		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
 		moc_predefs.h \
 		/usr/lib/qt6/moc
 	/usr/lib/qt6/moc $(DEFINES) --include /home/Development/Qt/DynamicsAppViewer/Binary/DynamicsAppViewerConsole/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/Development/Qt/DynamicsAppViewer/Source/DynamicsAppViewerConsole -I/home/Development/Qt/DynamicsAppViewer/Source/DynamicsAppViewerCore -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/12.2.0 -I/usr/include/c++/12.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/12.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include-fixed -I/usr/include ../../Source/DynamicsAppViewerConsole/Application.hpp -o moc_Application.cpp
@@ -721,6 +722,7 @@ Application.o: ../../Source/DynamicsAppViewerConsole/Application.cpp ../../Sourc
 		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
 		../../Source/DynamicsAppViewerConsole/Formatters/ApplicationInformationFormatter.hpp \
 		../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.hpp \
 		../../Source/DynamicsAppViewerConsole/General/ArgumentParser.hpp \
@@ -734,12 +736,16 @@ ApplicationInformationFormatter.o: ../../Source/DynamicsAppViewerConsole/Formatt
 
 ArgumentsFormatter.o: ../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.cpp ../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
-		../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.hpp
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
+		../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.hpp \
+		../../Source/DynamicsAppViewerCore/General/Bool.hpp \
+		../../Source/DynamicsAppViewerCore/Global.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ArgumentsFormatter.o ../../Source/DynamicsAppViewerConsole/Formatters/ArgumentsFormatter.cpp
 
 ArgumentParser.o: ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.cpp ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.hpp \
 		../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
 		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp \
 		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerCore/Global.hpp \
 		../../Source/DynamicsAppViewerConsole/Formatters/ApplicationInformationFormatter.hpp \
@@ -748,12 +754,12 @@ ArgumentParser.o: ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.c
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ArgumentParser.o ../../Source/DynamicsAppViewerConsole/General/ArgumentParser.cpp
 
 Arguments.o: ../../Source/DynamicsAppViewerConsole/General/Arguments.cpp ../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
-		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp
+		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Arguments.o ../../Source/DynamicsAppViewerConsole/General/Arguments.cpp
 
 DetailLevel.o: ../../Source/DynamicsAppViewerConsole/General/DetailLevel.cpp ../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
-		../../Source/DynamicsAppViewerCore/General/Exception.hpp \
-		../../Source/DynamicsAppViewerCore/Global.hpp
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DetailLevel.o ../../Source/DynamicsAppViewerConsole/General/DetailLevel.cpp
 
 main.o: ../../Source/DynamicsAppViewerConsole/main.cpp ../../Source/DynamicsAppViewerConsole/Application.hpp \
@@ -761,7 +767,8 @@ main.o: ../../Source/DynamicsAppViewerConsole/main.cpp ../../Source/DynamicsAppV
 		../../Source/DynamicsAppViewerCore/Global.hpp \
 		../../Source/DynamicsAppViewerCore/General/ApplicationInformation.hpp \
 		../../Source/DynamicsAppViewerConsole/General/Arguments.hpp \
-		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp
+		../../Source/DynamicsAppViewerConsole/General/DetailLevel.hpp \
+		../../Source/DynamicsAppViewerCore/General/Enum.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../Source/DynamicsAppViewerConsole/main.cpp
 
 moc_Application.o: moc_Application.cpp 

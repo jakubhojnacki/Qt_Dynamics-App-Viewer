@@ -15,9 +15,9 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
     class DetailLevel : public Core::General::Enum<DetailLevelEnum> {
         public: DetailLevel();
         public: DetailLevel(const DetailLevelEnum pValue);
+        public: DetailLevel(const QString& pString);
 
-        QMap<DetailLevelEnum, QString> getValues() const;
-
-        public: static DetailLevel parse(const QString& pString);
+        protected: virtual QString getName() const;
+        protected: virtual QMap<DetailLevelEnum, QString> getValues() const;
     };
 } } } }

@@ -12,7 +12,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         public: const QString& getPath() const;
         public: void setPath(const QString& pPath);
 
-        private: DetailLevel detailLevel { DetailLevel::Basic };
+        private: DetailLevel detailLevel { DetailLevelEnum::Basic };
         public: DetailLevel getDetailLevel() const;
         public: void setDetailLevel(const DetailLevel pDetailLevel);
 

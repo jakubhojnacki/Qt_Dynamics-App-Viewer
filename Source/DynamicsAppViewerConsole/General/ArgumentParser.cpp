@@ -37,7 +37,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
     }
 
     DetailLevel ArgumentParser::getDetailLevelOptionValue(const QCommandLineOption& pOption) const {
-        DetailLevel value { DetailLevel::Basic };
+        DetailLevel value { DetailLevelEnum::Basic };
         if (this->parser.isSet(pOption)) {
             QString stringValue = this->parser.value(pOption);
             value = DetailLevel::parse(stringValue);
