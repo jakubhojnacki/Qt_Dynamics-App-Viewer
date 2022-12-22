@@ -11,14 +11,14 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
         public: Enum(const EnumType pValue);
         public: Enum(const QString& pString);
 
-        protected: virtual QString getName() const = 0;
-        protected: virtual QMap<EnumType, QString> getValues() const = 0;
+        protected: virtual QString name() const = 0;
+        protected: virtual QMap<EnumType, QString> values() const = 0;
 
-        private: EnumType getDefaultValue() const;
+        private: EnumType defaultValue() const;
 
-        private: EnumType value { this->getDefaultValue() };
-        public: EnumType getValue() const;
-        public: void setValue(const EnumType pValue);
+        private: EnumType mValue { this->defaultValue() };
+        public: EnumType value() const;
+        public: void value(const EnumType pValue);
 
         public: QString toString() const;
         public: void parse(const QString& pString);

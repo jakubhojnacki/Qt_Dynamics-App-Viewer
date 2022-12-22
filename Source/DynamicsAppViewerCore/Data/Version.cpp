@@ -5,25 +5,25 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
     }
 
     Version::Version(int pMajor, int pMinor) : Version() {
-        this->major = pMajor;
-        this->minor = pMinor;
+        this->mMajor = pMajor;
+        this->mMinor = pMinor;
     }
 
     Version::Version(int pMajor, int pMinor, int pBuild) : Version(pMajor, pMinor) {
-        this->build = pBuild;
+        this->mBuild = pBuild;
     }
 
     Version::Version(int pMajor, int pMinor, int pBuild, int pRevision) : Version(pMajor , pMinor, pBuild) {
-        this->revision = pRevision;
+        this->mRevision = pRevision;
     }
 
-    int Version::getMajor() const { return this->major; }
+    int Version::major() const { return this->mMajor; }
 
-    int Version::getMinor() const { return this->minor; }
+    int Version::minor() const { return this->mMinor; }
 
-    int Version::getBuild() const { return this->build; }
+    int Version::build() const { return this->mBuild; }
 
-    int Version::getRevision() const { return this->revision; }
+    int Version::revision() const { return this->mRevision; }
 
     QString Version::format() const {
         QString text { };

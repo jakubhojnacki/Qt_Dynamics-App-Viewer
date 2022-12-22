@@ -4,27 +4,15 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
     ApplicationInformation::ApplicationInformation() {
     }
 
-    const QString& ApplicationInformation::getName() const {
-        return this->name;
-    }
+    const QString& ApplicationInformation::name() const { return this->mName; }
 
-    const QString& ApplicationInformation::getDescription() const {
-        return this->description;
-    }
+    const QString& ApplicationInformation::description() const { return this->mDescription; }
 
-    const QVersionNumber& ApplicationInformation::getVersion() const {
-        return this->version;
-    }
+    const QVersionNumber& ApplicationInformation::version() const { return this->mVersion; }
 
-    const QString& ApplicationInformation::getCompany() const {
-        return this->company;
-    }
+    const QString& ApplicationInformation::company() const { return this->mCompany; }
 
-    const QString& ApplicationInformation::getAuthor() const {
-        return this->author;
-    }
+    const QString& ApplicationInformation::author() const { return this->mAuthor; }
 
-    const QString& ApplicationInformation::getDate() const {
-        return this->date;
-    }
+    const QString& ApplicationInformation::date() const { return this->mDate; }
 } } } }

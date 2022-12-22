@@ -1,29 +1,14 @@
 #include "General/Arguments.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    Arguments::Arguments() {
-    }
+    Arguments::Arguments() { }
 
-    const QString& Arguments::getPath() const {
-        return this->path;
-    }
+    const QString& Arguments::path() const { return this->mPath; }
+    void Arguments::path(const QString& pPath) { this->mPath = pPath; }
 
-    void Arguments::setPath(const QString& pPath) {
-        this->path = pPath;
-    }
+    DetailLevel Arguments::detailLevel() const { return this->mDetailLevel; }
+    void Arguments::detailLevel(const DetailLevel pDetailLevel) { this->mDetailLevel = pDetailLevel; }
 
-    DetailLevel Arguments::getDetailLevel() const {
-        return this->detailLevel;
-    }
-    void Arguments::setDetailLevel(const DetailLevel pDetailLevel) {
-        this->detailLevel = pDetailLevel;
-    }
-
-    bool Arguments::getShowObjects() const {
-        return this->showObjects;
-    }
-
-    void Arguments::setShowObjects(const bool pShowObjects) {
-        this->showObjects = pShowObjects;
-    }
+    bool Arguments::showObjects() const { return this->mShowObjects; }
+    void Arguments::showObjects(const bool pShowObjects) { this->mShowObjects = pShowObjects; }
 } } } }

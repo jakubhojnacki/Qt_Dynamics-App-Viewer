@@ -1,19 +1,18 @@
 #include "ManifestBase.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    ManifestBase::ManifestBase() {
-    }
+    ManifestBase::ManifestBase() { }
 
-    const QUuid& ManifestBase::getId() const { return this->id; }
-    void ManifestBase::setId(const QUuid& pId) { this->id = pId; }
+    const QUuid& ManifestBase::id() const { return this->mId; }
+    void ManifestBase::id(const QUuid& pId) { this->mId = pId; }
 
-    const QString& ManifestBase::getName() const { return this->name; }
-    void ManifestBase::setName(const QString& pName) { this->name = pName; }
+    const QString& ManifestBase::name() const { return this->mName; }
+    void ManifestBase::name(const QString& pName) { this->mName = pName; }
 
-    const QString& ManifestBase::getPublisher() const { return this->publisher; }
-    void ManifestBase::setPublisher(const QString& pPublisher) { this->publisher = pPublisher; }
+    const QString& ManifestBase::publisher() const { return this->mPublisher; }
+    void ManifestBase::publisher(const QString& pPublisher) { this->mPublisher = pPublisher; }
 
-    const Version& ManifestBase::getVersion() const { return this->version; }
-    void ManifestBase::setVersion(const Version& pVersion) { this->version = pVersion; }
+    const Version& ManifestBase::version() const { return this->mVersion; }
+    void ManifestBase::version(const Version& pVersion) { this->mVersion = pVersion; }
 } } } }
 

@@ -3,6 +3,7 @@
 #include <QString>
 
 #include "../DynamicsAppViewerCore/General/Enum.hpp"
+#include "../DynamicsAppViewerCore/General/Enum.cpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
     enum class DetailLevelEnum {
@@ -17,7 +18,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         public: DetailLevel(const DetailLevelEnum pValue);
         public: DetailLevel(const QString& pString);
 
-        protected: virtual QString getName() const;
-        protected: virtual QMap<DetailLevelEnum, QString> getValues() const;
+        protected: virtual QString name() const;
+        protected: virtual QMap<DetailLevelEnum, QString> values() const;
     };
 } } } }

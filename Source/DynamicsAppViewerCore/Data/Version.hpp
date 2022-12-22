@@ -9,17 +9,17 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         public: Version(int pMajor, int pMinor, int pBuild);
         public: Version(int pMajor, int pMinor, int pBuild, int pRevision);
 
-        private: int major { 0 };
-        public: int getMajor() const;
+        private: int mMajor { 0 };
+        public: int major() const;
 
-        private: int minor { 0 };
-        public: int getMinor() const;
+        private: int mMinor { 0 };
+        public: int minor() const;
 
-        private: int build { 0 };
-        public: int getBuild() const;
+        private: int mBuild { 0 };
+        public: int build() const;
 
-        private: int revision { 0 };
-        public: int getRevision() const;
+        private: int mRevision { 0 };
+        public: int revision() const;
 
         public: static Version empty();
         public: bool isEmpty() const;

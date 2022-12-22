@@ -1,46 +1,45 @@
 #include "Manifest.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    Manifest::Manifest() : ManifestBase() {
-    }
+    Manifest::Manifest() : ManifestBase() { }
 
-    const QString& Manifest::getBrief() const { return this->brief; }
-    void Manifest::setBrief(const QString& pBrief) { this->brief = pBrief; }
+    const QString& Manifest::brief() const { return this->mBrief; }
+    void Manifest::brief(const QString& pBrief) { this->mBrief = pBrief; }
 
-    const QString& Manifest::getDescription() const { return this->description; }
-    void Manifest::setDescription(const QString& pDescription) { this->description = pDescription; }
+    const QString& Manifest::description() const { return this->mDescription; }
+    void Manifest::description(const QString& pDescription) { this->mDescription = pDescription; }
 
-    const QString& Manifest::getPrivacyStatement() const { return this->privacyStatement; }
-    void Manifest::setPrivacyStatement(const QString& pPrivacyStatement) { this->privacyStatement = pPrivacyStatement; }
+    const QString& Manifest::privacyStatement() const { return this->mPrivacyStatement; }
+    void Manifest::privacyStatement(const QString& pPrivacyStatement) { this->mPrivacyStatement = pPrivacyStatement; }
 
-    const QString& Manifest::getEula() const { return this->eula; }
-    void Manifest::setEula(const QString& pEula) { this->eula = pEula; }
+    const QString& Manifest::eula() const { return this->mEula; }
+    void Manifest::eula(const QString& pEula) { this->mEula = pEula; }
 
-    const QString& Manifest::getHelp() const { return this->help; }
-    void Manifest::setHelp(const QString& pHelp) { this->help = pHelp; }
+    const QString& Manifest::help() const { return this->mHelp; }
+    void Manifest::help(const QString& pHelp) { this->mHelp = pHelp; }
 
-    const QString& Manifest::getUrl() const { return this->url; }
-    void Manifest::setUrl(const QString& pUrl) { this->url = pUrl; }
+    const QString& Manifest::url() const { return this->mUrl; }
+    void Manifest::url(const QString& pUrl) { this->mUrl = pUrl; }
 
-    const QString& Manifest::getLogo() const { return this->logo; }
-    void Manifest::setLogo(const QString& pLogo) { this->logo = pLogo; }
+    const QString& Manifest::logo() const { return this->mLogo; }
+    void Manifest::logo(const QString& pLogo) { this->mLogo = pLogo; }
 
-    const Version& Manifest::getApplication() const { return this->application; }
-    void Manifest::setApplication(const Version& pApplication) { this->application = pApplication; }
+    const Version& Manifest::application() const { return this->mApplication; }
+    void Manifest::application(const Version& pApplication) { this->mApplication = pApplication; }
 
-    const Version& Manifest::getPlatform() const { return this->platform; }
-    void Manifest::setPlatform(const Version& pPlatform) { this->platform = pPlatform; }
+    const Version& Manifest::platform() const { return this->mPlatform; }
+    void Manifest::platform(const Version& pPlatform) { this->mPlatform = pPlatform; }
 
-    const QString& Manifest::getContextSensitiveHelpUrl() const { return this->contextSensitiveHelpUrl; }
-    void Manifest::setContextSensitiveHelpUrl(const QString& pContextSensitiveHelpUrl) { this->contextSensitiveHelpUrl = pContextSensitiveHelpUrl; }
+    const QString& Manifest::contextSensitiveHelpUrl() const { return this->mContextSensitiveHelpUrl; }
+    void Manifest::contextSensitiveHelpUrl(const QString& pContextSensitiveHelpUrl) { this->mContextSensitiveHelpUrl = pContextSensitiveHelpUrl; }
 
-    bool Manifest::getShowMyCode() const { return this->showMyCode; }
-    void Manifest::setShowMyCode(const bool pShowMyCode) { this->showMyCode = pShowMyCode; }
+    bool Manifest::showMyCode() const { return this->mShowMyCode; }
+    void Manifest::showMyCode(const bool pShowMyCode) { this->mShowMyCode = pShowMyCode; }
 
-    const Runtime& Manifest::getRuntime() const { return this->runtime; }
-    void Manifest::setRuntime(const Runtime& pRuntime) { this->runtime = pRuntime; }
+    const Runtime& Manifest::runtime() const { return this->mRuntime; }
+    void Manifest::runtime(const Runtime& pRuntime) { this->mRuntime = pRuntime; }
 
-    const QList<Dependency>& Manifest::getDependencies() const { return this->dependencies; }
+    const QList<Dependency>& Manifest::dependencies() const { return this->mDependencies; }
 
-    const QList<QString>& Manifest::getScreenshots() const { return this->screenshots; }
+    const QList<QString>& Manifest::screenshots() const { return this->mScreenshots; }
 } } } }

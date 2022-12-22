@@ -9,23 +9,23 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Gene
     class DYNAMICS_APP_VIEWER_CORE_EXPORT ApplicationInformation {
         public: ApplicationInformation();
 
-        private: QString name { "Dynamics App Viewer" };
-        public: const QString& getName() const;
+        private: QString mName { "Dynamics App Viewer" };
+        public: const QString& name() const;
 
-        private: QString description { "Viewer for Dynamics 365 Business Central application files" };
-        public: const QString& getDescription() const;
+        private: QString mDescription { "Viewer for Dynamics 365 Business Central application files" };
+        public: const QString& description() const;
 
-        private: QVersionNumber version { 0, 0, 1 };
-        public: const QVersionNumber& getVersion() const;
+        private: QVersionNumber mVersion { 0, 0, 1 };
+        public: const QVersionNumber& version() const;
 
-        private: QString company { "Fortah" };
-        public: const QString& getCompany() const;
+        private: QString mCompany { "Fortah" };
+        public: const QString& company() const;
 
-        private: QString author { "Jakub Hojnacki <jakubhojnacki@gmail.com>" };
-        public: const QString& getAuthor() const;
+        private: QString mAuthor { "Jakub Hojnacki <jakubhojnacki@gmail.com>" };
+        public: const QString& author() const;
 
-        private: QString date { "December 2022" };
-        public: const QString& getDate() const;
+        private: QString mDate { "December 2022" };
+        public: const QString& date() const;
     };
 } } } }
 

@@ -9,20 +9,20 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
     class ManifestBase {
         protected: ManifestBase();
 
-        private: QUuid id { };
-        public: const QUuid& getId() const;
-        public: void setId(const QUuid& pId);
+        private: QUuid mId { };
+        public: const QUuid& id() const;
+        public: void id(const QUuid& pId);
 
-        private: QString name { "" };
-        public: const QString& getName() const;
-        public: void setName(const QString& pName);
+        private: QString mName { "" };
+        public: const QString& name() const;
+        public: void name(const QString& pName);
 
-        private: QString publisher { "" };
-        public: const QString& getPublisher() const;
-        public: void setPublisher(const QString& pPublisher);
+        private: QString mPublisher { "" };
+        public: const QString& publisher() const;
+        public: void publisher(const QString& pPublisher);
 
-        private: Version version { };
-        public: const Version& getVersion() const;
-        public: void setVersion(const Version& pVersion);
+        private: Version mVersion { };
+        public: const Version& version() const;
+        public: void version(const Version& pVersion);
     };
 } } } }

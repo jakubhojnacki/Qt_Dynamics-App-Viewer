@@ -15,11 +15,11 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
         public: Application(QObject* pParent = 0);
 
         private: Core::Library library { };
-        private: Core::General::ApplicationInformation applicationInformation { this->library.getApplicationInformation() };
+        private: Core::General::ApplicationInformation applicationInformation { this->library.applicationInformation() };
         private: General::Arguments arguments { };
         private: QTextStream out { stdout };
 
-        private: QCoreApplication* getQtApplication();
+        private: QCoreApplication* qtApplication();
 
         public slots: void run();
         signals: void finished();

@@ -8,16 +8,16 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
     class Arguments {
         public: Arguments();
 
-        private: QString path { "" };
-        public: const QString& getPath() const;
-        public: void setPath(const QString& pPath);
+        private: QString mPath { "" };
+        public: const QString& path() const;
+        public: void path(const QString& pPath);
 
-        private: DetailLevel detailLevel { DetailLevelEnum::Basic };
-        public: DetailLevel getDetailLevel() const;
-        public: void setDetailLevel(const DetailLevel pDetailLevel);
+        private: DetailLevel mDetailLevel { DetailLevelEnum::Basic };
+        public: DetailLevel detailLevel() const;
+        public: void detailLevel(const DetailLevel pDetailLevel);
 
-        private: bool showObjects { false };
-        public: bool getShowObjects() const;
-        public: void setShowObjects(const bool pShowObjects);
+        private: bool mShowObjects { false };
+        public: bool showObjects() const;
+        public: void showObjects(const bool pShowObjects);
     };
 } } } }

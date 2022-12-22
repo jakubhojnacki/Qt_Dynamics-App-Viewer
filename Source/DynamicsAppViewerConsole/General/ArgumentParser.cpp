@@ -4,8 +4,7 @@
 #include "../../DynamicsAppViewerCore/General/Bool.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    ArgumentParser::ArgumentParser(const Core::General::ApplicationInformation& pApplicationInformation)
-        : applicationInformation { pApplicationInformation } {
+    ArgumentParser::ArgumentParser(const Core::General::ApplicationInformation& pApplicationInformation) : applicationInformation { pApplicationInformation } {
         this->parser.setApplicationDescription(Formatters::ApplicationInformationFormatter::toString(this->applicationInformation));
         this->parser.addHelpOption();
         this->parser.addVersionOption();
@@ -20,9 +19,9 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         this->parser.process(pQtApplication);
         this->positionalArguments = this->parser.positionalArguments();
 
-        arguments.setPath(this->getStringPositionalArgumentValue(0, "Path"));
-        arguments.setDetailLevel(this->getDetailLevelOptionValue(this->detailLevelOption));
-        arguments.setShowObjects(this->getBooleanOptionValue(this->showObjectsOption));
+        arguments.path(this->getStringPositionalArgumentValue(0, "Path"));
+        arguments.detailLevel(this->getDetailLevelOptionValue(this->detailLevelOption));
+        arguments.showObjects(this->getBooleanOptionValue(this->showObjectsOption));
 
         return arguments;
     }
