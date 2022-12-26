@@ -31,8 +31,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         return text;
     }
 
-    Version Version::parse(QString& pText) {
-        Version version { };
+    QSharedDataPointer<Version> Version::parse(QString& pText) {
+        QSharedDataPointer<Version> version { new Version { } };
         //TODO >>> Not implemented
         return version;
     }

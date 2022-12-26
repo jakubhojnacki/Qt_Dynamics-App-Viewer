@@ -1,12 +1,14 @@
 #pragma once
 
+#include <QSharedData>
+#include <QSharedDataPointer>
 #include <QString>
 #include <QUuid>
 
 #include "Version.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class ManifestBase {
+    class ManifestBase : public QSharedData {
         protected: ManifestBase();
 
         private: QUuid mId { };
@@ -21,8 +23,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         public: const QString& publisher() const;
         public: void publisher(const QString& pPublisher);
 
-        private: Version mVersion { };
-        public: const Version& version() const;
-        public: void version(const Version& pVersion);
+        private: QSharedDataPointer<Version> mVersion { new Version { } };
+        public: const QSharedDataPointer<Version> version() const;
+        public: void version(const QSharedDataPointer<Version> pVersion);
     };
 } } } }

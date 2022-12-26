@@ -1,9 +1,11 @@
 #pragma once
 
+#include <QSharedData>
+#include <QSharedDataPointer>
 #include <QString>
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data {
-    class Version {
+    class Version : public QSharedData {
         public: Version();
         public: Version(int pMajor, int pMinor);
         public: Version(int pMajor, int pMinor, int pBuild);
@@ -21,9 +23,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         private: int mRevision { 0 };
         public: int revision() const;
 
-        public: static Version empty();
         public: bool isEmpty() const;
         public: QString format() const;
-        public: static Version parse(QString& pText);
+        public: static QSharedDataPointer<Version> parse(QString& pText);
     };
 } } } }

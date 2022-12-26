@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QList>
+#include <QSharedDataPointer>
 #include <QString>
 #include <QUuid>
 
@@ -42,13 +43,13 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         public: const QString& logo() const;
         public: void logo(const QString& pLogo);
 
-        private: Version mPlatform { };
-        public: const Version& platform() const;
-        public: void platform(const Version& pPlatform);
+        private: QSharedDataPointer<Version> mPlatform { new Version { } };
+        public: const QSharedDataPointer<Version> platform() const;
+        public: void platform(const QSharedDataPointer<Version> pPlatform);
 
-        private: Version mApplication { };
-        public: const Version& application() const;
-        public: void application(const Version& pApplication);
+        private: QSharedDataPointer<Version> mApplication { new Version { } };
+        public: const QSharedDataPointer<Version> application() const;
+        public: void application(const QSharedDataPointer<Version> pApplication);
 
         private: QString mContextSensitiveHelpUrl { "" };
         public: const QString& contextSensitiveHelpUrl() const;
@@ -58,9 +59,9 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         public: bool showMyCode() const;
         public: void showMyCode(const bool pShowMyCode);
 
-        private: Runtime mRuntime { };
-        public: const Runtime& runtime() const;
-        public: void runtime(const Runtime& pRuntime);
+        private: QSharedDataPointer<Runtime> mRuntime { new Runtime { } };
+        public: const QSharedDataPointer<Runtime> runtime() const;
+        public: void runtime(const QSharedDataPointer<Runtime> pRuntime);
 
         private: QList<Dependency> mDependencies { };
         public: const QList<Dependency>& dependencies() const;

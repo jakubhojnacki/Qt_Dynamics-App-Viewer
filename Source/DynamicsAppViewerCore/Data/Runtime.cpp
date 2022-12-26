@@ -21,8 +21,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
         return text;
     }
 
-    Runtime Runtime::parse(QString& pText) {
-        Runtime runtime { };
+    QSharedDataPointer<Runtime> Runtime::parse(QString& pText) {
+        QSharedDataPointer<Runtime> runtime { new Runtime { } };
         //TODO >>> Not implemented
         return runtime;
     }

@@ -12,7 +12,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Data
     const QString& ManifestBase::publisher() const { return this->mPublisher; }
     void ManifestBase::publisher(const QString& pPublisher) { this->mPublisher = pPublisher; }
 
-    const Version& ManifestBase::version() const { return this->mVersion; }
-    void ManifestBase::version(const Version& pVersion) { this->mVersion = pVersion; }
+    const QSharedDataPointer<Version> ManifestBase::version() const { return this->mVersion; }
+    void ManifestBase::version(const QSharedDataPointer<Version> pVersion) { this->mVersion = pVersion; }
 } } } }
 

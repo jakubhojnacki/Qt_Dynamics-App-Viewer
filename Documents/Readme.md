@@ -20,3 +20,6 @@ Set application version
 QCoreApplication::setApplicationVersion();
 ```
 
+## Qt Shared pointers
+
+https://www.qt.io/blog/2009/08/25/count-with-me-how-many-smart-pointer-classes-does-qt-have

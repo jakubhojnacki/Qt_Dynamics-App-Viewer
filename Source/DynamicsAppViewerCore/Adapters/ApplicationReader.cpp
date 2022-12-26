@@ -7,8 +7,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Adap
     ApplicationReader::ApplicationReader() {
     }
 
-    Data::Application ApplicationReader::read(const QString& pFilePath) {
-        Data::Application application { };
+    QSharedDataPointer<Data::Application> ApplicationReader::read(const QString& pFilePath) {
+        QSharedDataPointer<Data::Application> application { };
         QFile file { pFilePath };
         if (file.open(QIODevice::ReadOnly)) {
             QDataStream stream { &file };
@@ -19,8 +19,8 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Core { namespace Adap
         return application;
     }
 
-    Data::Application ApplicationReader::read(const QDataStream& pStream) {
-        Data::Application application { };
+    QSharedDataPointer<Data::Application> ApplicationReader::read(const QDataStream& pStream) {
+        QSharedDataPointer<Data::Application> application { };
         QByteArray compressedData { };
         //TODO >>> Not implemented
         return application;
