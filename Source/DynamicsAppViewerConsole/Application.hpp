@@ -19,7 +19,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
         private: General::Arguments arguments { };
         private: QTextStream out { stdout };
 
-        private: QCoreApplication* qtApplication();
+        private: QCoreApplication* qtApplication() const;
 
         public slots: void run();
         signals: void finished();

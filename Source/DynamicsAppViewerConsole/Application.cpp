@@ -13,7 +13,7 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console {
         QObject { pParent } {
     }
 
-    QCoreApplication* Application::qtApplication() { return static_cast<QCoreApplication*>(this->parent()); }
+    QCoreApplication* Application::qtApplication() const { return static_cast<QCoreApplication*>(this->parent()); }
 
     void Application::run() {
         try {

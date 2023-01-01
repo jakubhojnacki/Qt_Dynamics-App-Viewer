@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QSharedDataPointer>
 #include <QString>
 
 #include "DetailLevel.hpp"
@@ -12,9 +13,9 @@ namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace G
         public: const QString& path() const;
         public: void path(const QString& pPath);
 
-        private: DetailLevel mDetailLevel { DetailLevelEnum::Basic };
-        public: DetailLevel detailLevel() const;
-        public: void detailLevel(const DetailLevel pDetailLevel);
+        private: QSharedDataPointer<DetailLevel> mDetailLevel { new DetailLevel { DetailLevel::Type::Basic } };
+        public: QSharedDataPointer<DetailLevel> detailLevel() const;
+        public: void detailLevel(const QSharedDataPointer<DetailLevel> pDetailLevel);
 
         private: bool mShowObjects { false };
         public: bool showObjects() const;

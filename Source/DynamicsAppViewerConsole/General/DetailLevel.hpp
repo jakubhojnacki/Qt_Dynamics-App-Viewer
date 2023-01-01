@@ -1,24 +1,29 @@
 #pragma once
 
+#include <QObject>
 #include <QString>
 
-#include "../DynamicsAppViewerCore/General/Enum.hpp"
-#include "../DynamicsAppViewerCore/General/Enum.cpp"
-
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    enum class DetailLevelEnum {
-        Null = 0,
-        Basic = 1,
-        Medium = 2,
-        Full = 3
-    };
+    class DetailLevel : QObject {
+        Q_OBJECT
 
-    class DetailLevel : public Core::General::Enum<DetailLevelEnum> {
+        public: enum Type {
+            Null = 0,
+            Basic = 1,
+            Medium = 2,
+            Full = 3
+        };
+
+        Q_ENUM(Type)
+
         public: DetailLevel();
-        public: DetailLevel(const DetailLevelEnum pValue);
+        public: DetailLevel(const DetailLevel::Type pValue);
         public: DetailLevel(const QString& pString);
 
-        protected: virtual QString name() const;
-        protected: virtual QMap<DetailLevelEnum, QString> values() const;
+        private: DetailLevel::Type mValue { DetailLevel::Type::Basic };
+        public: DetailLevel::Type value() const;
+        public: void setValue(const DetailLevel::Type pValue);
+
+        public: const QString toString() const;
     };
 } } } }

@@ -1,22 +1,22 @@
-#include <QMap>
+#include <QMetaEnum>
+#include <QString>
 
 #include "DetailLevel.hpp"
+#include "../DynamicsAppViewerCore/General/Enum.hpp"
 
 namespace Fortah { namespace DynamicsAppViewer { namespace Console { namespace General {
-    DetailLevel::DetailLevel() : Enum { } { }
+    DetailLevel::DetailLevel() { }
 
-    DetailLevel::DetailLevel(const DetailLevelEnum pValue) : Enum { pValue } { }
+    DetailLevel::DetailLevel(const DetailLevel::Type pValue) : mValue { pValue } { }
 
-    DetailLevel::DetailLevel(const QString& pString) : Enum { pString } { }
+    DetailLevel::DetailLevel(const QString& pString) {
+        this->setValue(Core::General::Enum::parse<DetailLevel::Type>(pString));
+    }
 
-    QString DetailLevel::name() const { return "DetailLevel"; }
+    DetailLevel::Type DetailLevel::value() const { return this->mValue; }
+    void DetailLevel::setValue(const DetailLevel::Type pValue) { this->mValue = pValue; }
 
-    QMap<DetailLevelEnum, QString> DetailLevel::values() const {
-        return {
-            { DetailLevelEnum::Null, "Null" },
-            { DetailLevelEnum::Basic, "Basic" },
-            { DetailLevelEnum::Medium, "Medium" },
-            { DetailLevelEnum::Full, "Full" }
-        };
+    const QString DetailLevel::toString() const {
+        return Core::General::Enum::toString<DetailLevel::Type>(this->value());
     }
 } } } }
